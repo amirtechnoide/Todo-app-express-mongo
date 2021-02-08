@@ -1,0 +1,108 @@
+{{!-- <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">state</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry theg   Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table> --}}
+
+
+<div class="container">
+	<div class="row">
+	    <div class="col-md-12">	<h2 class="text-white">All Members</h2> </div>
+	</div>
+    
+    <div class="row">
+    					
+						<div class="col-md-12">
+							<div class="widget blank no-padding">
+								<div class="panel panel-default work-progress-table">
+									  <!-- Default panel contents -->
+									
+											
+											<button class="btn btn-danger pull-right"  data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"><i class="fa fa-trash mr-2"></i></span> Delete</button>
+										</div>
+									</div>
+									  <!-- Table -->
+									<table id="mytable" class="table">
+										<thead>
+										  <tr>
+											<th>Delete</th>
+											<th>id</th>
+                      <th>Description</th>
+                      <th>Title</th>
+											<th style="width:25%">
+												Edit
+												</th>
+											<th>Status</th>
+										  </tr>
+										</thead>
+										<tbody class="">
+											{{#each todos}}
+										  <tr>
+											<td class=""><form method="POST" action="/todos/{{this._id}}?_method=DELETE">
+		                  <input type="hidden" name="_method"  value="DELETE">
+		                  {{!-- <input class="amir-style-input"  type="submit" value="Del"> --}}
+		                  <button class="amir-style-button-submit" type="submit"><i  class="fa fa-trash" style = "cursor:pointer"></i></button>
+	                    </form></td>  
+											<td>{{this._id}}</td>
+                      <td>{{this.description}}</td>
+                      <td>{{this.title}}</td>
+											<td>
+												<a href="/todos/edit/{{_id}}"><i class="fas fa-edit" style="filter:invert(1)"></i></a>
+											</td>
+											<td><span class="label label-info">{{this.state}}</span><i class="fa fa-unlock ml-2"></i></td>
+										  </tr>
+											  {{/each}}
+										  </tbody>
+									</table>
+								</div>    
+							</div>
+						</div>
+					</div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+      </div>
+          <div class="modal-body">
+       
+       <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+       
+      </div>
+        <div class="modal-footer ">
+        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+      </div>
+        </div>
+    <!-- /.modal-content --> 
+  </div>
+      <!-- /.modal-dialog --> 
+    </div>

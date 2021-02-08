@@ -1,0 +1,74 @@
+{{!-- <form class="needs-validation"  method="POST" action="/todos">
+  <div class="form-row">
+
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">First name</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required name="title">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required name="description">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    
+  </div>
+  
+  
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+ --}}
+
+
+
+  
+  <div class='box'>
+    <div class='box-form'>
+      <div class='box-login-tab'></div>
+      <div class='box-login-title'>
+        <div class='i i-login'></div><h2>Add</h2>
+      </div>
+      <div class='box-login'>
+        <div class='fieldset-body' id='login_form'>
+          <button onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></button>
+<form class="needs-validation"  method="POST" action="/todos">
+
+          	<p class='field'>
+            <label for='user'>Title</label>
+            <input type='text' id='user' name='title' title='Username' />
+            <span id='valida' class='i i-warning'></span>
+          </p>
+        	  <p class='field'>
+            <label for='pass'>Description</label>
+            <input type='text' id='pass' name='description' title='Password' />
+            <span id='valida' class='i i-close'></span>
+          </p>
+  
+            <label class='checkbox'>
+              <input type='checkbox' value='TRUE' title='Keep me Signed in' /> New Todo
+            </label>
+  
+          	<input type="submit" id='do_login' value='SUBMIT' title='Get Started' />
+        </div>
+</form>
+
+      </div>
+    </div>
+    <div class='box-info'>
+  					    <p><button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button><h3>Quick Open</h3>
+      </p>
+  					    <div class='line-wh'></div>
+      					<button onclick="" class='b-support' title='Forgot Password?'><a class='amir-link text-white' href="/todos"> See Todos</a></button>
+      <button onclick="" class='b-support' title='Contact Support'> Delete Todo</button>
+      					<div class='line-wh'></div>
+      <button onclick="" class='b-cta' title='Sign up now!' href="/">Get Todos</button>
+    				</div>
+  </div>
+
+
+ {{!-- <div class='icon-credits'>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="http://www.flaticon.com/authors/budi-tanrim" title="Budi Tanrim">Budi Tanrim</a> & <a href="http://www.flaticon.com/authors/nice-and-serious" title="Nice and Serious">Nice and Serious</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> --}}
+  

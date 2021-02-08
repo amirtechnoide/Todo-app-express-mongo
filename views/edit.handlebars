@@ -1,0 +1,47 @@
+
+    <form action="/todos/{{todo._id}}?_method=PUT" METHOD= 'post'>
+<div class="container mt-2">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Recipient's username"
+      aria-label="Recipient's username"
+      aria-describedby="button-addon2"
+      value="{{todos.title}}"
+      name="title"
+    />
+  </div>
+  
+  {{!-- <div class="input-group mb-3">
+    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+      Button
+    </button>
+    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+      Button
+    </button>
+    <input
+      type="text"
+      class="form-control"
+      placeholder=""
+      aria-label="Example text with two button addons"
+    />
+  </div> --}}
+  
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Recipient's username"
+      aria-label="Recipient's username with two button addons"
+      value="{{todo.description}}"
+      name="description"
+    />
+
+    {{!-- <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+      Button
+    </button> --}}
+  </div>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Valid</button>
+</div>
+    </form>

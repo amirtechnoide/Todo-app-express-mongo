@@ -23,32 +23,24 @@
 </nav> --}}
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Todo-App</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/todos">All Todos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/todos/add">add-Todo</a>
-        </li>
-        {{!-- <li class="nav-item">
-          <a class="nav-link" href="/todos/edit">Get Todo</a>  
-        </li> --}}
+
+
+
+
+
+<nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm" style="background:#078138 !important">
+  <div class="container">
+    <a  class="navbar-brand" href="/">Todo-App
+    </a>
+
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item "><a href="/todos" class="nav-link">All Todos</a></li>
+        <li class="nav-item"><a class="nav-link" href="/todos/add">add-Todo</a></li>
       </ul>
     </div>
   </div>
 </nav>
+

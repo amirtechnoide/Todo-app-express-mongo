@@ -7,7 +7,7 @@ const path = require("path")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const methodOverride = require("method-override")
-
+var morgan = require('morgan')
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
@@ -22,11 +22,13 @@ mongoose.connect("mongodb://localhost/todoAssign", {
     .catch((e) => console.error(e))
 
 // static folder
-app.use(express.static(path.join(__dirname, "/public/")));
-
-// handlars middlware
+// app.use(express.static(path.join(__dirname, "/public/")));
+app.use(morgan())
+    // handlars middlware
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+
+app.use(express.static(path.join(__dirname, "/public")))
 
 
 // body-parse

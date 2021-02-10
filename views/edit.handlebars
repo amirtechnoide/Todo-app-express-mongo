@@ -1,47 +1,36 @@
-
-    <form action="/todos/{{todo._id}}?_method=PUT" METHOD= 'post'>
-<div class="container mt-2">
-  <div class="input-group mb-3">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Recipient's username"
-      aria-label="Recipient's username"
-      aria-describedby="button-addon2"
-      value="{{todos.title}}"
-      name="title"
-    />
-  </div>
+<div class="container mt-4">
+  <div class="banner"><h2 class="text-white" style="font-family: 'sans' !important; font-size: 3em !important;">Update Todo</h2></div>
+      <form action="/todos/{{todo._id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+  <div class="container mt-2">
+    <div class="input-group mb-3">
+        <label class="text-white" for="title">Title</label>
+      <input
+        type="text"
+        class="form-control bg-light"
+        {{!-- placeholder="Recipient's username"
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2" --}}
+        required
+        name="title"
+        value="{{todo.title}}"
+      />
+    </div>
   
-  {{!-- <div class="input-group mb-3">
-    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-      Button
-    </button>
-    <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-      Button
-    </button>
-    <input
-      type="text"
-      class="form-control"
-      placeholder=""
-      aria-label="Example text with two button addons"
-    />
-  </div> --}}
+    
+    <div class="input-group">
+        <label class="text-white" for="details">Description</label>
   
-  <div class="input-group">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Recipient's username"
-      aria-label="Recipient's username with two button addons"
-      value="{{todo.description}}"
-      name="description"
-    />
-
-    {{!-- <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-      Button
-    </button> --}}
+      <input
+        type="text"
+        class="form-control bg-light"
+        name="description"
+        required
+        bg-ligh
+        value="{{todo.description}}"
+      />
+    </div>
   </div>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Valid</button>
+          <button type="submit" class="btn btn-default ml-2 mt-4"><span class="glyphicon glyphicon-remove"></span> Update</button>
+      </form>
 </div>
-    </form>

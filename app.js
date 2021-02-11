@@ -17,7 +17,8 @@ app.listen(PORT, () => {
 
 // create and connect to database
 mongoose.connect("mongodb://localhost/todoAssign", {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
     }).then(() => console.log("connected to mongoDB"))
     .catch((e) => console.error(e))
 

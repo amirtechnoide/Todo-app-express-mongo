@@ -68,13 +68,21 @@
 		                  {{!-- <input class="amir-style-input"  type="submit" value="Del"> --}}
 		                  <button class="amir-style-button-submit" type="submit"><i  class="fa fa-trash" style = "cursor:pointer"></i></button>
 	                    </form></td>  
-											{{!-- <td>{{this._id}}</td> --}}
                       <td>{{this.description}}</td>
                       <td>{{this.title}}</td>
 											<td>
 												<a href="/todos/edit/{{_id}}"><i class="fas fa-edit" style="filter:invert(1)"></i></a>
 											</td>
-											<td><span class="label label-info">{{this.state}}</span><i class="fa fa-unlock ml-2"></i></td>
+											<td>
+                      
+                  <form method="post" action="/todos/status?_method=PATCH">
+                          <input type="hidden" name='id' value={{this._id}} >
+                        <button class="amir-style-button-submit" type="submit">
+                          {{this.state}}
+                          <i  class="fa fa-unlock ml-2" style = "cursor:pointer"></i>
+                        </button>
+                  </form>
+                      </td>
 										  </tr>
 											  {{/each}}
 										  </tbody>
@@ -98,10 +106,17 @@
        
       </div>
         <div class="modal-footer ">
-        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+          <form method="post" action="/todos?_method=DELETE">
+                          <input type="hidden" >
+        <button type="submit" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                        {{!-- <button class="amir-style-button-submit" type="submit">
+                          {{this.state}}
+                          <i  class="fa fa-unlock ml-2" style = "cursor:pointer"></i>
+                        </button> --}}
+                  </form>
         <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
       </div>
-        </div>
+        </div>  
     <!-- /.modal-content --> 
   </div>
       <!-- /.modal-dialog --> 

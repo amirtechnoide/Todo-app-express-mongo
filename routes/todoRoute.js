@@ -53,6 +53,25 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//UPDATE todo
+router.patch('/status', (req, res) => {
+    Todo.findById(
+        req.body.id,
+    ).then((todo) => {
+        // new values
+        todo.state = !todo.state,
+            todo
+            .save()
+            .then(() => {
+                // if (todo.state == true) {
+                // todo.description.style.css('text-transform: line-throught');
+                // }
+                res.redirect("/todos");
+            })
+            .catch((err) => console.log(err));
+    });
+});
+
 router.post("/", (req, res) => {
     // console.log(req.body);
 
@@ -72,6 +91,12 @@ router.delete("/:id", (req, res) => {
         }).then(() =>
             res.redirect("/todos"))
         .catch((err) => console.log(err));
+});
+
+
+router.delete("/", (req, res) => {
+    Todo.deleteMany()
+        .then(() => res.redirect("/todos"))
 });
 
 /* READ, UPDATE, DELETE users */
